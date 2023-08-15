@@ -72,6 +72,14 @@ function createDefaultWindow() {
   win.loadURL(`file://${__dirname}/version.html#v${app.getVersion()}`);
   return win;
 }
+// 设置自动更新的服务器地址
+autoUpdater.setFeedURL({
+  provider: 'github',
+  owner: 'jingwenLv',
+  repo: 'electron-updater-demo',
+  token: 'talent'
+});
+
 autoUpdater.on('checking-for-update', () => {
   sendStatusToWindow('Checking for update...');
 })
@@ -93,6 +101,7 @@ autoUpdater.on('download-progress', (progressObj) => {
 autoUpdater.on('update-downloaded', (info) => {
   sendStatusToWindow('Update downloaded');
 });
+
 app.on('ready', function() {
   // Create the Menu
   const menu = Menu.buildFromTemplate(template);
