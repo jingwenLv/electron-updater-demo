@@ -80,7 +80,7 @@ function createDefaultWindow() {
 //   token: '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'
 // });
 
-// [Environment]::SetEnvironmentVariable("GH_TOKEN","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","User")
+// [Environment]::SetEnvironmentVariable("GH_TOKEN","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","User")
 
 
 autoUpdater.on('checking-for-update', () => {
